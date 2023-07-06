@@ -47,7 +47,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
+            <label for="password" class="form-label">Confirm Password</label>
             <input 
             type="password" 
             class="form-control" 
@@ -64,6 +64,6 @@
         </a>
 
 
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-primary">Register</button>
     </form>  
 @endsection

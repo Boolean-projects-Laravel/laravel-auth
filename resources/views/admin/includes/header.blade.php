@@ -1,1 +1,1 @@
-@include ('admin.blade.nav')
+@include ('admin.includes.nav')
