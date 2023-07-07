@@ -10,7 +10,7 @@
 <body>
     @include ('admin.includes.header')
 
-    <div class="container">
+    <div class="container_main">
         <main>
             @yield('contents')
         </main>

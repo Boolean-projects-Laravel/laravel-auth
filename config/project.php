@@ -68,7 +68,7 @@ return [
     ],
 
     [
-        "title" => "DC Comics",
+        "title" => "Laravel Boolean",
         "author" => "Paolo Falco",
         "creation_date" => "2023-07-04",
         "last_update" => "2023-07-04",

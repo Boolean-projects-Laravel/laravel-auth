@@ -1,6 +1,12 @@
+<header class="bg-dark py-3">
+    <div class="container">
+        <h1 class="text-center text-primary">Boolean Projects Git Hub</h1>
+    </div>
+</header>
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">Boolean</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -17,7 +23,7 @@
                     Dropdown
                     </a>
                     <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="/admin/projects">Lista Progetti</a></li>
                     <li><a class="dropdown-item" href="#">Another action</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -33,18 +39,16 @@
             </form>
         </div>
 
-        <div class="ms-4 font-medium text-base text-gray-800">
-            Pinco
-        </div>
+        
         
     </div>
 
-    <div class="d-flex justify-content-center" style="width:250px">
-        <div class="mx-1">
+    <div class="d-flex justify-content-end m-3" style="width:130px">
+        {{-- <div class="mx-1">
             <a class="" href="http://127.0.0.1:8001/admin">
                 Dashboard
             </a>
-        </div>
+        </div> --}}
     
         <div class="mx-1">
             <a class="">
