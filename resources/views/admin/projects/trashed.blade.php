@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('admin.layouts.base')
 
 @section('contents')
 <div class="bg-dark text-light py-2 mb-3">
@@ -71,5 +71,5 @@
 
 
 
-{{ $trashedComics->links() }}
+{{ $trashedProjects->links() }}
 @endsection

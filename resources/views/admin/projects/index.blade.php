@@ -16,7 +16,7 @@
     <div class="alert alert-danger">
         Project '{{$project->title}}' è stato cancellato
         <form 
-            action="{{ route('projects.restore', ['project' => $project]) }}"
+            action="{{ route('admin.projects.restore', ['project' => $project]) }}"
             class="d-inline-block" 
             method="POST" 
             >

@@ -24,6 +24,10 @@ return new class extends Migration {
             $table->string('languages', 50);
             $table->string('link_github', 150);
 
+
+            //metterlo quando si crea il cestino
+            $table->softDeletes();
+
             $table->timestamps();
         });
     }
