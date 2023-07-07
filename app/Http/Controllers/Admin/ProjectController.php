@@ -139,6 +139,7 @@ class ProjectController extends Controller
         $project->delete();
 
         return to_route('admin.projects.index')->with('delete_success', $project);
+
     }
 
     //da qui in avanti bisogna richiamare i route dal web.php perchè il comando si ferma a 'destroy'
