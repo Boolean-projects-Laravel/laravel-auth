@@ -98,7 +98,7 @@
             name="description" 
             value="{{ old('description', $project->description)}}" 
             rows="3" 
-            >
+            >{{ old('description', $project->description) }}
             </textarea>
 
             <div class="invalid-feedback">
@@ -106,7 +106,7 @@
             </div>
         </div>
 
-
+        
         <div class="mb-3">
             <label for="languages" class="form-label"style="font-weight:700; font-size:20px">
                 Languages

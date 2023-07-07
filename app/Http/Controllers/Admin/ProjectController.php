@@ -136,6 +136,33 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        $project->delete();
+
+        return to_route('admin.projects.index')->with('delete_success', $project);
+    }
+
+    //da qui in avanti bisogna richiamare i route dal web.php perchè il comando si ferma a 'destroy'
+
+    public function restore($id)
+    {
+        Project::withTrashed()->where('id', $id)->restore();
+
+        $project = Project::find($id);
+
+        return to_route('admin.projects.index')->with('restore_success', $project);
+    }
+    public function trashed()
+    {
+        $trashedProjects = Project::onlyTrashed()->paginate(5);
+
+        return view('admin.projects.trashed', compact('trashedProjects'));
+
+    }
+    public function harddelete($id)
+    {
+        $project = Project::withTrashed()->find($id);
+        $project->forceDelete();
+
+        return to_route('admin.projects.trashed')->with('delete_success', $project);
     }
 }

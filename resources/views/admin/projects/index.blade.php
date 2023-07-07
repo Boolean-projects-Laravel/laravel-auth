@@ -7,16 +7,16 @@
         <h1 class="ms-4" style="font-weight: 700">Lista Projects</h1>
     </div>
 
-    {{-- @if (session('delete_success'))
+    @if (session('delete_success'))
             
     @php
-        $comic = session('delete_success') 
+        $project = session('delete_success') 
     @endphp
 
     <div class="alert alert-danger">
-        Comic '{{$comic->title}}' è stato cancellato
+        Project '{{$project->title}}' è stato cancellato
         <form 
-            action="{{ route('comics.restore', ['comic' => $comic]) }}"
+            action="{{ route('projects.restore', ['project' => $project]) }}"
             class="d-inline-block" 
             method="POST" 
             >
@@ -30,14 +30,14 @@
     @if (session('restore_success'))
 
     @php
-        $comic = session('restore_success')
+        $project = session('restore_success')
     @endphp
 
     <div class="alert alert-success">
-        Comic '{{$comic->title}}' è stato ripristinato
+        Project '{{$project->title}}' è stato ripristinato
     </div>
 
-    @endif --}}
+    @endif
 
     <button type="button" class="btn btn-primary mt-4 mx-4">
         <a href="{{ route("admin.projects.create") }}" class="card-link text-decoration-none text-light" style="font-weight: 700; font-size:25px">Creare un nuovo Progetto</a>
