@@ -12,7 +12,7 @@
     </div>
 @endif
 
-<div class="container">
+<div class="container_table mx-4">
 
     <table class="table table-striped mt-4">
         <thead>
@@ -25,7 +25,7 @@
                 <th scope="col">Description</th>
                 <th scope="col">Languages</th>
                 <th scope="col">Link</th>
-                <th scope="col">Actions</th>
+                <th scope="col"><span class="d-flex justify-content-center" style="padding-right: 7rem;">Actions</span></th>
             </tr>
         </thead>
         <tbody>
@@ -40,12 +40,12 @@
                     <td>{{ $project->languages }}</td>
                     <td><a href="{{ $project->link_github }}">Link</a></td>
                     
-                    <td>
+                    <td class="d-flex justify-content-end px-3">
                         <form
                             action=
                             "{{ route('admin.projects.restore', ['project' => $project->id]) }}"
                             method="post"
-                            class="d-inline-block"
+                            class="d-inline-block mx-1"
                         >
                             @csrf
                             <button class="btn btn-success">Ripristina</button>
@@ -53,7 +53,7 @@
                         <form
                             action="{{ route('admin.projects.harddelete', ['project' => $project->id]) }}"
                             method="post"
-                            class="d-inline-block"
+                            class="d-inline-block mx-1"
                         >
                             @csrf
                             @method('delete')
