@@ -40,7 +40,7 @@
     @endif --}}
 
     <button type="button" class="btn btn-primary mt-4 mx-4">
-        <a href="{{ '/comics/create' }}" class="card-link text-decoration-none text-light" style="font-weight: 700; font-size:25px">Creare un nuovo Progetto</a>
+        <a href="{{ route("admin.projects.create") }}" class="card-link text-decoration-none text-light" style="font-weight: 700; font-size:25px">Creare un nuovo Progetto</a>
     </button>
     <div class="container_table m-4">
         <table class="table table-striped mt-4">
@@ -87,10 +87,6 @@
             </tbody>
         </table>
     </div>
-    
-
-    {{ $projects->links() }}
-
     
     <div class="px-4 d-flex flex-column justify-content-start" style=" font-size:20px; font-weight: 700">
         {{ $projects->links() }}

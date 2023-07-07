@@ -8,6 +8,19 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
+
+    private $validations = [
+        'title' => 'required|string|max:50',
+        'creation_date' => 'required|date|max:20',
+        'last_update' => 'required|date|max:20',
+        'author' => 'required|string|max:30',
+        'collaborators' => 'nullable|string|max:150',
+        'description' => 'nullable|string|',
+        'languages' => 'required|string|max:50',
+        'link_github' => 'required|string|max:150',
+    ];
+
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +28,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::paginate(10);
+        $projects = Project::paginate(5);
 
         return view('admin.projects.index', compact('projects'));
     }
@@ -27,7 +40,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.projects.create');
     }
 
     /**
@@ -38,7 +51,28 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validare i dati
+
+        $request->validate($this->validations);
+
+        $data = $request->all();
+
+        // salvare i dati nel database
+
+        $newProject = new Project();
+
+        $newProject->title = $data['title'];
+        $newProject->creation_date = $data['creation_date'];
+        $newProject->last_update = $data['last_update'];
+        $newProject->author = $data['author'];
+        $newProject->collaborators = $data['collaborators'];
+        $newProject->description = $data['description'];
+        $newProject->languages = $data['languages'];
+        $newProject->link_github = $data['link_github'];
+
+        $newProject->save();
+
+        return redirect()->route('admin.projects.show', ['project' => $newProject->id]);
     }
 
     /**
@@ -60,7 +94,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
@@ -72,7 +106,26 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        //
+        //validare i dati
+
+        $request->validate($this->validations);
+
+        $data = $request->all();
+
+        // salvare i dati nel database
+
+        $project->title = $data['title'];
+        $project->creation_date = $data['creation_date'];
+        $project->last_update = $data['last_update'];
+        $project->author = $data['author'];
+        $project->collaborators = $data['collaborators'];
+        $project->description = $data['description'];
+        $project->languages = $data['languages'];
+        $project->link_github = $data['link_github'];
+
+        $project->update();
+
+        return redirect()->route('admin.projects.index', ['project' => $project->id]);
     }
 
     /**
